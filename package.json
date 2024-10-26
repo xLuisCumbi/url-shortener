@@ -1,0 +1,14 @@
+{
+    "name": "url-shortener",
+    "version": "1.0.0",
+    "description": "Simple URL Shortener with PostgreSQL",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "pg": "^8.13.0"
+    }
+}
