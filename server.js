@@ -24,8 +24,8 @@ async function createTable() {
         await client.query(`
             CREATE TABLE IF NOT EXISTS shortened_urls (
                 id SERIAL PRIMARY KEY,
-                short_url VARCHAR(50) UNIQUE NOT NULL,
-                original_url TEXT NOT NULL,
+                short_url VARCHAR(2048) UNIQUE NOT NULL,
+                original_url TEXT NOT NULL CHECK (length(original_url) <= 8192),
                 created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
                 expires_at TIMESTAMP WITH TIME ZONE
             )
